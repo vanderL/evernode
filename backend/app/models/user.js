@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+var bcrypt = require('bcrypt')
 
 let userSchema = new mongoose.Schema({
     name: String,
@@ -11,7 +11,6 @@ let userSchema = new mongoose.Schema({
 
 userSchema.pre('save', function (next){
     if (this.isNew || this.isModified('password')){
-        const document = this;
         bcrypt.hash(this.password, 10,
            (err, hashedPassword) => {
                 if (err)
@@ -24,5 +23,15 @@ userSchema.pre('save', function (next){
         )
     }
 })
+
+userSchema.methods.isCorrectPassword = (password, callback) => {
+    bcrypt.compare(password, this.password, (err, same) => {
+        if(err){
+            callback(err)
+        } else {
+            callback(err, same)
+        }
+    })
+}
 
 module.exports = mongoose.model('User', userSchema)
