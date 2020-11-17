@@ -7,4 +7,4 @@ mongoose.connect('mongodb://localhost/javascriptNote', {
   useCreateIndex: true
 }
 ).then(() => console.log('connection succesful'))
-  .catch((err) => console.error('Deu erro: '+err));
+  .catch((err) => console.error('Deu erro: '+ err));
