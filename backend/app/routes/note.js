@@ -4,9 +4,7 @@ const Note =  require('../models/note')
 const withAuth = require('../middlewares/auth')
 
 router.post('/', withAuth, async function(req, res) {
-    const { title, body } = req.body
-
-    
+    const { title, body } = req.body    
     try {
         var note = new Note({title: title, body: body, author: req.user._id})
         await note.save()
@@ -16,15 +14,16 @@ router.post('/', withAuth, async function(req, res) {
     }
 })
 
-router.get('/search', withAuth, async(req, res) => {
+router.get('/search', withAuth, async function(req, res) {
     const { query } = req.query
     try {
         let notes = await Note
-            .find({$text: {$search: query}})
+        .find({ author: req.user._id }).find({ $text: {$search: query}})
         res.json(notes)
     } catch (error) {
-        res.json({error: "Deu ruim"}).status(500)
+        res.json({error: error}).status(500)
     }
+
 })
 
 router.get('/:id', withAuth, async function(req, res){    
