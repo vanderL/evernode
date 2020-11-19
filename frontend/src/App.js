@@ -1,14 +1,14 @@
-import React from 'react'
-import { Notification, Section } from 'rbx'
+import React, {Fragment} from 'react'
+//import { Notification, Section } from 'rbx'
 import './App.scss'
+import Header from './components/Header/index'
 
 function App() {
   return (
-    <Section>
-      <Notification color="success">
-        Hello RBX
-      </Notification>
-    </Section>
+    <Fragment>
+      <Header />
+    </Fragment>
+
   );
 }
 
