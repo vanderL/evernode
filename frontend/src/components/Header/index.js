@@ -23,7 +23,7 @@ function Header(){
 
                 <Navbar.Menu id="navbar-menu">
                     <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
-                        Item 1
+                        Olá 
                     </Navbar.Segment> 
                 </Navbar.Menu>
 
