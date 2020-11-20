@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import { Link } from 'react-router-dom'
 import PresentationImage  from '../../assets/images/presentation.png'
 import Header from '../../components/Header'
 import { Column, Section, Title, Container } from 'rbx'
@@ -21,9 +22,9 @@ const Home = () => (
                             Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
                         </Title>
                         <Title>
-                            <a href="" className="button is-outlined is-white is-large">
-                                <strong>Register for free NOW</strong>
-                            </a>
+                            <Link to="/register" className="button is-outlined is-white is-large">
+                                <strong>Register for free Now</strong>
+                            </Link>
                         </Title>
                     </Column>
                     

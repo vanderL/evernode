@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import { Navbar, Container} from 'rbx'
+import { Link }  from 'react-router-dom'
+import { Navbar, Container, Column} from 'rbx'
 import LogoImagem from '../../assets/images/logo.png'
 import "../../styles/Header.scss"
 
@@ -9,7 +10,9 @@ function Header(){
             <Container>
                 
                 <Navbar.Brand>
-                    <img src={LogoImagem} alt="Logo"/>
+                    <Link to="/">
+                        <img src={LogoImagem} alt="Logo"/>
+                    </Link>
                     <Navbar.Burger
                         className="navbar-burger burger"
                         arial-label="menu"
@@ -23,7 +26,14 @@ function Header(){
 
                 <Navbar.Menu id="navbar-menu">
                     <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
-                        Olá 
+                        <Column.Group>
+                           <Column>
+                                <Link to="/register" className="button is-purple has-text-custom-purple">Register</Link>
+                           </Column>
+                           <Column>
+                                <Link to="/login" className="button is-outlined is-custom-purple">Login</Link>
+                           </Column>
+                        </Column.Group> 
                     </Navbar.Segment> 
                 </Navbar.Menu>
 

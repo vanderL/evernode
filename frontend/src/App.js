@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react'
 //import { Notification, Section } from 'rbx'
 import './App.scss'
-import Home from './screens/home'
+import Routes from './routes'
 
 function App() {
   return (
     <Fragment>
-      <Home />
+      <Routes />
     </Fragment>
 
   );
