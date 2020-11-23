@@ -22,8 +22,8 @@ const Home = () => (
                             Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
                         </Title>
                         <Title>
-                            <Link to="/register" className="button is-outlined is-white is-large">
-                                <strong>Register for free Now</strong>
+                            <Link to="/login" className="button is-outlined is-white is-large">
+                                <strong>Login</strong>
                             </Link>
                         </Title>
                     </Column>
