@@ -1,4 +1,4 @@
-# evernode
+# Evernode
 Aplication based in evernote app, developed with React + Nodejs. 
 
 
