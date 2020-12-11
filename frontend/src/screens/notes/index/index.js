@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import Header from '../../../components/header_logged'
+import HeaderLogged from '../../../components/header_logged'
+import Note from '../../../components/notes'
 
 const Notes = () => (
     <Fragment>
-        <Header />
-
-        Hello Notes
+        <HeaderLogged />
+        <Note/>
     </Fragment>
 )
 

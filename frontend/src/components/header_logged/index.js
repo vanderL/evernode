@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Navbar, Container, Column, Button, Dropdown} from 'rbx'
 import LogoImage from '../../assets/images/logo-white.png'
-import "../../styles/header.scss"
+import "../../styles/Header.scss"
 import UserService from '../../services/users'
 import { Link, Redirect } from 'react-router-dom'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -30,6 +30,17 @@ function HeaderLogged(props) {
                         </Link>
                     </Column>
                 </Column.Group>
+                
+                <Navbar.Burger
+                    className="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbar-menu">
+                        <span aria-hidden="true">Setting</span>
+                        <span aria-hidden="true">Clube de Vantagens</span>
+                        <span aria-hidden="true">Logout </span>
+                </Navbar.Burger>
+
             </Navbar.Brand>
 
             <Navbar.Menu>
