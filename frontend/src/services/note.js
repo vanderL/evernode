@@ -1,4 +1,4 @@
-import App from "./api"
+import Api from "./api"
 
 const NoteService = {
     index: () => Api.get("/notes", {
