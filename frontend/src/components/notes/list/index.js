@@ -10,6 +10,16 @@ function ListNotes(props) {
                     <Title size={6}>
                         {props.notes.length} Notes
                     </Title>
+                    <Column size={2}>
+                        <Button 
+                            state="active" 
+                            color="custom-purple"
+                            outlined
+                            size="small"
+                            onClick={() => props.createNote()}>
+                                Notes +
+                        </Button>
+                    </Column>
                 </Column>
             </Column.Group>
             <List className="notes-list">
