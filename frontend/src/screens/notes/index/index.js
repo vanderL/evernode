@@ -1,12 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import HeaderLogged from '../../../components/header_logged'
+import { Column } from "rbx"
+import "../../../styles/notes.scss"
 import Note from '../../../components/notes'
 
-const Notes = () => (
-    <Fragment>
-        <HeaderLogged />
-        <Note/>
-    </Fragment>
-)
+function Notes(){
+    const[isOpen, setIsOpen] = useState(false)
+
+    return (
+        <Fragment>
+            <HeaderLogged setIsOpen={setIsOpen} />
+            <Note isOpen={isOpen} setIsOpen={setIsOpen}/>
+        </Fragment>
+    )
+}
+
 
 export default Notes
