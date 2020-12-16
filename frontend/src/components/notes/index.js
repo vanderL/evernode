@@ -6,28 +6,28 @@ import List from "../notes/list"
 import NotesService from '../../services/note'
 
 function Notes(props) {
-  const [notes, setNotes] = useState([])
-  const [current_note, setCurrentNote] = useState({ title: "", body: "", id: "" });
+    const [notes, setNotes] = useState([])
+    const [current_note, setCurrentNote] = useState({ title: "", body: "", id: "" });
 
-  async function fetchNotes() {
-    const response = await NotesService.index();
-    if (response.data.length >= 1) {
-      setNotes(response.data.reverse())
-      setCurrentNote(response.data[0])
-    } else {
-      setNotes([])
+    async function fetchNotes() {
+        const response = await NotesService.index();
+        if (response.data.length >= 1) {
+            setNotes(response.data.reverse())
+            setCurrentNote(response.data[0])
+        } else {
+            setNotes([])
+        }
     }
-  }
 
-  const createNote = async () => {
-    await NotesService.create()
-    fetchNotes()
-  }
+    const createNote = async () => {
+        await NotesService.create()
+        fetchNotes()
+    }
 
-  const deleteNote = async (note) => {
-    await NotesService.delete(note._id)
-    fetchNotes()
-  }
+    const deleteNote = async (note) => {
+        await NotesService.delete(note._id)
+        fetchNotes()
+    }
 
     const updateNote = async (oldNote, params) => {
         const updatedNote = await NotesService.update(oldNote._id, params)
@@ -66,15 +66,16 @@ function Notes(props) {
           customBurgerIcon={false}
           customCrossIcon={false}
         >
-          <Column.Group>
+            <Column.Group>
            
-          </Column.Group>
-          <List
-            notes={notes}
-            selectNote={selectNote}
-            current_note={current_note} 
-            deleteNote={deleteNote}
-            createNote={createNote}/>
+            </Column.Group>
+            <List
+                notes={notes}
+                selectNote={selectNote}
+                current_note={current_note} 
+                deleteNote={deleteNote}
+                createNote={createNote}
+            />
         </Menu>
 
 
