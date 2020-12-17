@@ -5,6 +5,7 @@ import { push as Menu } from 'react-burger-menu'
 import List from "../notes/list"
 import NotesService from '../../services/note'
 import Editor from './editor'
+import Search from '../notes/search'
 
 function Notes(props) {
     const [notes, setNotes] = useState([])
@@ -67,8 +68,8 @@ function Notes(props) {
           customBurgerIcon={false}
           customCrossIcon={false}
         >
-            <Column.Group>
-           
+            <Column.Group> 
+              <Search searchNotes={searchNotes} fetchNotes={fetchNotes} />
             </Column.Group>
             <List
                 notes={notes}
